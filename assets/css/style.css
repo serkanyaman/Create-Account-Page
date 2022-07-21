@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Quicksand:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img,
+svg {
+  width: 100%;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  background-image: url(../images/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.global-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 1rem;
+  max-width: 1110px;
+}
+
+.left {
+  display: none;
+}
+
+.right {
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 1px 1px 12px 1px white;
+  padding: 1rem;
+}
+.right .form-title {
+  text-align: center;
+}
+.right form {
+  padding: 0.5rem;
+}
+.right .inp {
+  width: 100%;
+  padding: 0.825rem;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid rgb(243, 243, 243);
+  margin-bottom: 0.225rem;
+}
+.right .password-eye-wrapper {
+  position: relative;
+}
+.right .password-eye-wrapper span {
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+.right .password-eye-wrapper span:hover {
+  cursor: pointer;
+}
+.right .password-eye-wrapper span:hover path {
+  fill: rgba(0, 0, 0, 0.725);
+}
+.right .password-eye-wrapper span svg path {
+  fill: rgb(190, 188, 188);
+}
+.right .eye-active svg path {
+  fill: black !important;
+}
+
+.input-ch-wrapper {
+  max-width: 95%;
+  font-size: 14px;
+  margin: 12px auto;
+  color: #bebcbc;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.9rem;
+       column-gap: 0.9rem;
+  letter-spacing: 1.5px;
+}
+
+.inp-ch {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.inp-btn {
+  width: 100%;
+  background-color: #3badcd;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+.inp-btn:hover {
+  background-color: rgba(108, 193, 230, 0.7803921569);
+}
+
+.or {
+  text-align: center;
+  font-weight: bold;
+  margin: 0.225rem;
+}
+
+.signwith-social {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 0.5rem;
+  letter-spacing: 1.5px;
+}
+.signwith-social .google,
+.signwith-social .facebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.6rem;
+       column-gap: 0.6rem;
+  font-size: 14px;
+  cursor: pointer;
+}
+.signwith-social .google:hover,
+.signwith-social .facebook:hover {
+  font-weight: 500;
+}
+.signwith-social .google svg,
+.signwith-social .facebook svg {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.already-have-account {
+  text-align: center;
+  color: #bebcbc;
+  font-size: 18px;
+  margin-top: 0.725rem;
+}
+.already-have-account a {
+  color: #3badcd;
+  transition: all 0.2s;
+}
+.already-have-account a:hover {
+  color: #3badcd;
+  opacity: 0.625;
+}
+
+input::-moz-placeholder {
+  color: #bebcbc;
+}
+
+input:-ms-input-placeholder {
+  color: #bebcbc;
+}
+
+input::placeholder {
+  color: #bebcbc;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    grid-template-columns: 32% 68%;
+  }
+  .container .left {
+    position: relative;
+    display: block;
+  }
+  .container .left::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: #51c8bc;
+    right: -3rem;
+    z-index: -1;
+    box-shadow: 1px 1px 16px 1px white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  .container .left .left-wrapper {
+    padding: 1rem 0 0 4rem;
+    position: relative;
+  }
+  .container .left .left-wrapper .logo {
+    max-width: 65px;
+  }
+  .container .left .left-wrapper .foreword {
+    width: 100%;
+    margin-top: 3.2rem;
+    font-weight: 500;
+    margin-left: -0.6rem;
+    text-align: center;
+    font-size: 40px;
+    line-height: 42px;
+    color: #fff;
+  }
+  .container .left .left-wrapper .vr-image {
+    position: absolute;
+    top: 11rem;
+    left: -3.925rem;
+    width: 540px;
+  }
+  .container .right .signwith-social {
+    width: 65%;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 0;
+    margin-top: 0.6rem;
+  }
+}/*# sourceMappingURL=style.css.map */

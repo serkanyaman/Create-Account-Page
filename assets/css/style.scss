@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Quicksand:wght@400;500;600;700&display=swap");
+
+$mainfont: "Abril Fatface", cursive;
+$secondfont: "Quicksand", sans-serif;
+$firstcolor: #51c8bc;
+$secondcolor: #3badcd;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img,
+svg {
+  width: 100%;
+}
+
+body {
+  font-family: $secondfont;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.global-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 1rem;
+  max-width: 1110px;
+}
+
+.left {
+  display: none;
+}
+
+.right {
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 1px 1px 12px 1px white;
+  padding: 1rem;
+  .form-title {
+    text-align: center;
+  }
+  form {
+    padding: 0.5rem;
+  }
+  .inp {
+    width: 100%;
+    padding: 0.825rem;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid rgba(243, 243, 243, 1);
+    margin-bottom: 0.225rem;
+  }
+  .password-eye-wrapper {
+    position: relative;
+    span {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      &:hover {
+        cursor: pointer;
+        path {
+          fill: rgba($color: #000000, $alpha: 0.725);
+        }
+      }
+      svg {
+        path {
+          fill: rgba(190, 188, 188, 1);
+        }
+      }
+    }
+  }
+
+  .eye-active {
+    svg {
+      path {
+        fill: black !important;
+      }
+    }
+  }
+}
+.input-ch-wrapper {
+  max-width: 95%;
+  font-size: 14px;
+  margin: 12px auto;
+  color: #bebcbc;
+  display: flex;
+  align-items: center;
+  column-gap: 0.9rem;
+  letter-spacing: 1.5px;
+}
+.inp-ch {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.inp-btn {
+  width: 100%;
+  background-color: $secondcolor;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  &:hover {
+    background-color: #6cc1e6c7;
+  }
+}
+
+.or {
+  text-align: center;
+  font-weight: bold;
+  margin: 0.225rem;
+}
+
+.signwith-social {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 0.5rem;
+  letter-spacing: 1.5px;
+  .google,
+  .facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.6rem;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover{
+        font-weight: 500;
+    }
+    svg {
+      max-width: 30px;
+      max-height: 30px;
+    }
+  }
+}
+
+.already-have-account {
+  text-align: center;
+  color: #bebcbc;
+  font-size: 18px;
+  margin-top: 0.725rem;
+  a {
+    color: $secondcolor;
+    transition: all 0.2s;
+    &:hover {
+      color: #3badcd;
+      opacity: 0.625;
+    }
+  }
+}
+input::placeholder {
+  color: #bebcbc;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    grid-template-columns: 32% 68%;
+    .left {
+      position: relative;
+      display: block;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        background-color: $firstcolor;
+        right: -3rem;
+        z-index: -1;
+        box-shadow: 1px 1px 16px 1px white;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+
+      .left-wrapper {
+        padding: 1rem 0 0 4rem;
+        position: relative;
+        .logo {
+          max-width: 65px;
+        }
+
+        .foreword {
+          width: 100%;
+          margin-top: 3.2rem;
+          font-weight: 500;
+          margin-left: -.6rem;
+          text-align: center;
+          font-size: 40px;
+          line-height: 42px;
+          color: #fff;
+        }
+
+        .vr-image{
+            position: absolute;
+            top: 11rem;
+            left: -3.925rem;
+            width: 540px;
+        }
+      }
+    }
+    .right{
+        .signwith-social{
+            width: 65%;
+            margin: 0 auto;
+            grid-template-columns: repeat(2,50%);
+            row-gap: 0;
+            margin-top: .6rem;
+        }
+    }
+  }
+}
